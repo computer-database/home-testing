@@ -1,0 +1,23 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "mainjmeter" ]
+  pull_request:
+    branches: [ "mainjmeter" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: JMeter Test
+        uses: QAInsights/PerfAction@v3.1
+        with:
+          test-plan-path: ./src/test/jmeter/basic.jmx
+          args: "-e -o ./report"
+      - name: Upload Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: jmeter-results
+          path: result.jtl
