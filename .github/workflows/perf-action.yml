@@ -21,3 +21,8 @@ jobs:
         with:
           name: jmeter-results
           path: result.jtl
+      - name: Upload Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: jmeter-report
+          path: ./report
