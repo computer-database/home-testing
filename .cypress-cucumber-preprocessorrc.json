@@ -1,0 +1,16 @@
+{
+  "json": {
+    "enabled": true,
+    "output": "reports/cucumber-report.json",
+    "formater": "cucumber-json-formatter"
+  },
+  "html": {
+    "enabled": true,
+    "output": "reports/cucumber-report.html"
+  },
+  "messages": {
+    "enabled": true,
+    "output": "reports/cucumber-messages.ndjson"
+  },
+  "stepDefinitions": ["cypress/support/steps/**/*.{js,ts}"]
+}
